@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Bienvenido, {{ session['username'] }}</h2>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Explorar Cursos</h5>
+                <p class="card-text">Accede al catálogo de cursos disponibles sobre computación cuántica.</p>
+                <a href="{{ url_for('course.catalog') }}" class="btn btn-primary">Ver Cursos</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Mi Carrito</h5>
+                <p class="card-text">Revisa los cursos que has agregado a tu carrito.</p>
+                <a href="{{ url_for('course.view_cart') }}" class="btn btn-success">Ver Carrito</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if session['username'] == 'admin' %}
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card border-warning">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Panel de Administrador</h5>
+                    <p class="card-text">Sube nuevos cursos para los estudiantes.</p>
+                    <a href="{{ url_for('course.upload_course') }}" class="btn btn-warning">Subir Curso</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

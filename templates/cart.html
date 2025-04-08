@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Carrito de cursos</h2>
+{% if cart_items %}
+    <ul class="list-group">
+        {% for item in cart_items %}
+            <li class="list-group-item d-flex justify-content-between">
+                {{ item.course.title }} - ${{ item.course.price }}
+                <span class="badge bg-primary">Curso ID: {{ item.course.id }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay cursos en tu carrito.</p>
+{% endif %}
+{% endblock %}
