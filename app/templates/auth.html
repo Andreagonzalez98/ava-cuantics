@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Iniciar Sesión</h2>
+    <form method="POST">
+        {{ login_form.hidden_tag() }}
+        {{ login_form.correo.label }}<br>
+        {{ login_form.correo(size=32) }}<br>
+        {{ login_form.contrasena.label }}<br>
+        {{ login_form.contrasena(size=32) }}<br>
+        {{ login_form.submit() }}
+    </form>
+
+    <hr>
+
+    <h2>Registrarse</h2>
+    <form method="POST">
+        {{ registro_form.hidden_tag() }}
+        {{ registro_form.nombre.label }}<br>
+        {{ registro_form.nombre(size=32) }}<br>
+        {{ registro_form.correo.label }}<br>
+        {{ registro_form.correo(size=32) }}<br>
+        {{ registro_form.contrasena.label }}<br>
+        {{ registro_form.contrasena(size=32) }}<br>
+        {{ registro_form.submit() }}
+    </form>
+</div>
+{% endblock %}
+

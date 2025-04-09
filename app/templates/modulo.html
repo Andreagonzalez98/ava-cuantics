@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Contenido del Módulo{% endblock %}
+
+{% block content %}
+    <h2>{{ modulo.titulo }}</h2>
+    <p>{{ modulo.descripcion }}</p>
+
+    <h3>Contenidos:</h3>
+    <ul>
+        {% for c in contenidos %}
+        <li>
+            {{ c.titulo }} -
+            <a href="{{ url_for('static', filename='uploads/' ~ c.archivo) }}" target="_blank">Ver archivo</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

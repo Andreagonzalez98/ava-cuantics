@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Carrito{% endblock %}
+
+{% block content %}
+    <h2>Tu carrito</h2>
+    {% if items %}
+        <ul>
+            {% for item in items %}
+            <li>
+                Curso ID: {{ item.curso_id }} - Estado: {{ item.estado }}
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tienes cursos en tu carrito.</p>
+    {% endif %}
+{% endblock %}

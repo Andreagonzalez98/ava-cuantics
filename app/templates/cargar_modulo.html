@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Cargar Módulo{% endblock %}
+
+{% block content %}
+    <h2>Nuevo Módulo</h2>
+    <form method="POST">
+        <p>Título: <input type="text" name="titulo" required></p>
+        <p>Descripción: <textarea name="descripcion" required></textarea></p>
+        <p><button type="submit">Guardar</button></p>
+    </form>
+{% endblock %}

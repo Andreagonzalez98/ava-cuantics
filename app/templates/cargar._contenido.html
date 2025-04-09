@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Cargar Contenido{% endblock %}
+
+{% block content %}
+    <h2>Agregar Contenido a Módulo</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <p>Título: <input type="text" name="titulo" required></p>
+        <p>Archivo: <input type="file" name="archivo" required></p>
+        <p><button type="submit">Subir</button></p>
+    </form>
+{% endblock %}

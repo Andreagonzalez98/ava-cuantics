@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <h2>Módulos disponibles</h2>
+    <ul>
+    {% for modulo in modulos %}
+        <li>
+            <a href="{{ url_for('ver_modulo', modulo_id=modulo.id) }}">{{ modulo.titulo }}</a>
+            <p>{{ modulo.descripcion }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
